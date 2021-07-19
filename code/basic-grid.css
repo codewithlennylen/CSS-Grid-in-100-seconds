@@ -1,0 +1,22 @@
+.basic-grid{
+    display: grid;
+    /* A gap of 1 rem between rows */
+    gap: 1rem; 
+
+    /* Create Columns using the grid-template-columns */
+    /* Method 1: Too skinny, too much code */
+    /* fr=fractional unit -> Available space */
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+
+    /* Method 2: Cleaner code */
+    grid-template-columns: repeat(12, 1fr);
+
+    /* 3. Better Sizing, but overflows */
+    grid-template-columns: repeat(12, minmax(240px,1fr));
+
+    /* Implicit Grid -> Let the algorithm figure out rows/cols */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+    /* Watch out for auto-fill; which creates extra columns while auto-fit expands its
+       children to fit the space */
+}
