@@ -1,0 +1,26 @@
+.photo-grid{
+    display: grid;
+    gap: 1rem;
+
+    /* Rows too skinny */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+    /* resize rows */
+    grid-auto-rows: 240px;
+}
+
+/* wrap with media queries */
+/* These classes won't be applied on smaller screens */
+@media screen and (min-width: 600px) {
+    
+.card-tall{
+    /* span start / end */
+    /* in this case, the card spans 2 rows */
+    grid-row: span 2 / auto;
+}
+
+.card-wide{
+    /* in this case, the card spans 2 cols */
+    grid-column: span 2 / auto;
+}
+}
